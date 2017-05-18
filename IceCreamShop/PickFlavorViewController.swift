@@ -21,6 +21,7 @@
  */
 
 import UIKit
+import Alamofire
 
 public class PickFlavorViewController: UIViewController {
 
@@ -43,6 +44,9 @@ public class PickFlavorViewController: UIViewController {
 
   fileprivate func loadFlavors() {
     // TO-DO: Implement this
+    Alamofire.request("https://www.raywenderlich.com/downloads/Flavors.plist", method: .get, encoding: PropertyListEncoding(format: .xml, options: 0)).responsePropertyList { [weak self] response in
+      <#code#>
+    }
   }
 
   fileprivate func selectFirstFlavor() {
