@@ -52,6 +52,8 @@ public class PickFlavorViewController: UIViewController {
         let dictionaryArray = response.result.value as? [[String: String]] else {
           return
       }
+      
+      strongSelf.flavors = strongSelf.flavorFactory.flavors(from: dictionaryArray)
     }
   }
 
