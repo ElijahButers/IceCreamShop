@@ -47,6 +47,11 @@ public class PickFlavorViewController: UIViewController {
     Alamofire.request("https://www.raywenderlich.com/downloads/Flavors.plist", method: .get, encoding: PropertyListEncoding(format: .xml, options: 0)).responsePropertyList { [weak self] response in
       
       guard let strongSelf = self else { return }
+      
+      guard response.result.isSuccess,
+        let dictionaryArray = response.result.value as? [[String: String]] else {
+          return
+      }
     }
   }
 
