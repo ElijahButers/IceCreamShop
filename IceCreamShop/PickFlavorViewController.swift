@@ -54,6 +54,9 @@ public class PickFlavorViewController: UIViewController {
       }
       
       strongSelf.flavors = strongSelf.flavorFactory.flavors(from: dictionaryArray)
+      
+      strongSelf.collectionView.reloadData()
+      strongSelf.selectFirstFlavor()
     }
   }
 
