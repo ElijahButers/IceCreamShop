@@ -60,6 +60,12 @@ public class PickFlavorViewController: UIViewController {
       strongSelf.selectFirstFlavor()
     }
   }
+  
+  private func showLoadingHUD() {
+    
+    let hud = MBProgressHUD.showAdded(to: contentView, animated: true)
+    hud.label.text = "Loading..."
+  }
 
   fileprivate func selectFirstFlavor() {
     guard let flavor = flavors.first else {
