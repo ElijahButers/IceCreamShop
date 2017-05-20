@@ -51,6 +51,8 @@ public class PickFlavorViewController: UIViewController {
       
       guard let strongSelf = self else { return }
       
+      strongSelf.hideLoadingHUD()
+      
       guard response.result.isSuccess,
         let dictionaryArray = response.result.value as? [[String: String]] else {
           return
